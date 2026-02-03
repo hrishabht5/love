@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Valentine Week Surprise ❤️</title>
+    <!-- Romantic Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="flash" class="flash-effect"></div>
+    <div class="hearts-container" id="hearts"></div>
+
+    <div id="main-container">
+        <!-- Intro View (Dynamic for each day) -->
+        <div id="intro-view">
+            <h1 id="main-header">Valentine Week</h1>
+            <span class="day-title" id="day-title">Loading...</span>
+            <div class="illustration" id="day-icon">💝</div>
+            <div id="countdown-container" class="countdown-container"></div>
+            <p class="message" id="day-message">Loading your surprise...</p>
+            <button class="action-button" id="accept-btn">Accept</button>
+            <p class="footer-note" id="next-surprise-line"></p>
+        </div>
+
+        <!-- Rose Day Interactive View -->
+        <div id="interactive-view" style="display: none;">
+            <div id="balloon-container"></div>
+            <div id="photo-section">
+                <img id="fav-rose-img" src="rose day.jpeg" alt="Favourite Rose">
+                <p>“This is my favourite rose 🌹”</p>
+            </div>
+            <div id="note-section" class="note-card">
+                <p>“Even on busy days, I want you to remember that you are deeply loved and appreciated by me.”</p>
+            </div>
+        </div>
+
+        <!-- Propose Day Interactive View -->
+        <div id="propose-view" style="display: none;">
+            <!-- Memory Lock Message (Shown if already said YES) -->
+            <div id="memory-lock-view" style="display: none;">
+                <h2 class="success-message">You already said YES 💖</h2>
+                <div id="propose-celebration-revisited">
+                    <div class="celebration-frame">
+                        <img class="celebration-img" src="propose 2.jpeg" alt="Propose Day">
+                    </div>
+                    <p class="teaser-text">Tomorrow… I have something sweeter for you 🍫</p>
+                </div>
+            </div>
+
+            <div id="proposal-card-flow">
+                <div id="proposal-card">
+                    <!-- Text will be typed here by JS -->
+                    <h2 id="proposal-question-typed" class="typewriter-text"></h2>
+                    <div class="proposal-btns" id="proposal-btn-group">
+                        <button class="action-button" id="yes-btn" onclick="handleProposal('yes')">YES! ❤️</button>
+                        <button class="action-button" id="no-btn" onmouseover="moveNoButton()"
+                            onclick="moveNoButton()">No 😢</button>
+                    </div>
+                </div>
+
+                <div id="propose-celebration" style="display: none;">
+                    <h2 class="success-message">You just made me the happiest person alive 💖</h2>
+                    <div id="propose-photo-section">
+                        <!-- PREMIUM IMAGE FIELD: Replace 'propose day.jpeg' with your own image -->
+                        <div class="celebration-frame">
+                            <img id="propose-img" src="propose day.jpeg" alt="Propose Day Celebration"
+                                onerror="this.src='https://images.unsplash.com/photo-1518131394553-c357069dc8da?auto=format&fit=crop&w=400&q=80'">
+                        </div>
+                        <p>“Forever starts now... 💍✨”</p>
+                    </div>
+                    <div id="propose-note-section" class="note-card">
+                        <p>“Proposing to you is the easiest decision I've ever made. I promise to cherish you today,
+                            tomorrow, and every day after.”</p>
+                    </div>
+                    <!-- Tomorrow Teaser -->
+                    <p id="tomorrow-teaser" class="teaser-text">Tomorrow… I have something sweeter for you 🍫</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chocolate Day Interactive View -->
+        <div id="chocolate-view" style="display: none;">
+            <div id="chocolate-box-flow">
+                <div class="chocolate-box-container">
+                    <div id="box-lid" class="box-lid" onclick="openChocolateBox()">
+                        <div class="lid-ribbon"></div>
+                        <span class="lid-text">Tap to Open 🍫</span>
+                    </div>
+                    <div class="chocolate-box-base">
+                        <div class="chocolates-grid" id="chocolates-grid">
+                            <!-- Chocolates will be generated by JS -->
+                        </div>
+                    </div>
+                </div>
+                <div id="chocolate-message-display" class="note-card" style="display: none;">
+                    <p id="choco-msg-text"></p>
+                    <button class="action-button" id="pick-another-btn" style="display: none; margin-top: 20px;"
+                        onclick="resetToGrid()">Pick another chocolate 🍫</button>
+                </div>
+            </div>
+
+            <!-- Completion View -->
+            <div id="chocolate-completion-view" style="display: none;">
+                <h2 class="success-message">You found all my sweet notes! 💖</h2>
+                <div class="celebration-frame soft-glow" style="margin-bottom: 20px;">
+                    <img id="completion-photo" src="propose 2.jpeg" alt="Sweet Memory" class="celebration-img">
+                </div>
+                <p class="message">But my biggest surprise is still coming… Tomorrow ❤️</p>
+                <p class="teaser-text">Prepare your heart for Teddy Day 🧸</p>
+            </div>
+        </div>
+
+        <!-- Journey Indicator -->
+        <div id="journey-container">
+            <p id="journey-text">Valentine Week Journey: 🌹⬜⬜⬜⬜⬜⬜❤️</p>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source id="music-source"
+            src="Perfect (slowed) - Ringtone  Love Song  Instagram famous reels song 2023 - Ringtones Official.mp3"
+            type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
