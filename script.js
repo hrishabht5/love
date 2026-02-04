@@ -107,6 +107,12 @@ function displayDay(day) {
     const journeyText = document.getElementById('journey-text');
     const acceptBtn = document.getElementById('accept-btn');
 
+    // Ensure correct music for Valentine Week
+    const music = document.getElementById('bg-music');
+    if (music && !music.src.includes("Untill%20i%20found%20you")) {
+        music.src = "Untill i found you X Perfect- Ringtone  Famous Love song  Instagram famous reels song 2023 - Ringtones Official.mp3";
+    }
+
     // Default setup
     titleElem.innerHTML = data.title;
     iconElem.innerText = data.icon;
@@ -511,7 +517,20 @@ function displayFallback() {
     titleElem.innerText = "Waiting for Love...";
     iconElem.innerText = "⌛";
     messageElem.innerText = "Valentine Week hasn’t started yet. Please come back on Feb 7 ❤️";
-    btn.style.display = "none";
+
+    // Set special music for fallback
+    const music = document.getElementById('bg-music');
+    if (music) {
+        music.src = "Voh Dekhnay Mein Full Video - London Paris New YorkAli Zafar, Aditi Rao Hydari - SonyMusicIndiaVEVO.mp3";
+    }
+
+    btn.style.display = "inline-block";
+    btn.innerText = "Tap for a Pre-Valentine Treat 🎵";
+    btn.onclick = () => {
+        playRomanticMusic();
+        btn.style.display = "none";
+    };
+
     nextLine.innerText = "The magic is just around the corner!";
 
     // Start Countdown
