@@ -116,6 +116,26 @@
             </div>
         </div>
 
+        <!-- Valentine's Day 'Falling Memories' Finale -->
+        <div id="grand-finale-view" style="display: none;">
+            <!-- Stage 1: The Locket -->
+            <div id="locket-stage">
+                <div class="locket-wrapper" onclick="openLocket()">
+                    <div class="locket">
+                        <div class="locket-cover">💍</div>
+                        <div class="locket-photo">❤️</div>
+                    </div>
+                    <p class="locket-hint">Click to unlock our journey... ✨</p>
+                </div>
+            </div>
+
+            <!-- Stage 2: Aurora & Memories (Created by JS) -->
+            <div id="aurora-stage" style="display: none;">
+                <div id="falling-memories-container"></div>
+                <div id="climax-message-container"></div>
+            </div>
+        </div>
+
         <!-- Journey Indicator -->
         <div id="journey-container">
             <p id="journey-text">Valentine Week Journey: 🌹⬜⬜⬜⬜⬜⬜❤️</p>
@@ -125,11 +145,15 @@
     <!-- Background Music -->
     <audio id="bg-music" loop>
         <source id="music-source"
-            src="Perfect (slowed) - Ringtone  Love Song  Instagram famous reels song 2023 - Ringtones Official.mp3"
+            src="Untill i found you X Perfect- Ringtone  Famous Love song  Instagram famous reels song 2023 - Ringtones Official.mp3"
             type="audio/mpeg">
     </audio>
 
     <script src="script.js"></script>
+
+    <!-- Full Screen Finale Canvases -->
+    <canvas id="star-canvas" style="display: none;"></canvas>
+    <canvas id="fireworks-canvas" style="display: none;"></canvas>
 </body>
 
 </html>
