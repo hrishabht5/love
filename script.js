@@ -494,10 +494,22 @@ function spawnRoseBalloon(container, message) {
     const balloon = document.createElement('div');
     balloon.className = 'rose-balloon';
 
-    // Better horizontal distribution
-    const leftPos = 5 + (Math.random() * 80);
+    // Spawn in pink background areas only (left or right of the card)
+    // Use alternating zones to prevent overlap/grouping
+    const existingBalloons = container.querySelectorAll('.rose-balloon').length;
+    const spawnLeft = existingBalloons % 2 === 0;
+
+    let leftPos;
+    if (spawnLeft) {
+        // Left side: 10-25vw (keeps message within screen)
+        leftPos = 10 + (Math.random() * 15);
+    } else {
+        // Right side: 65-80vw (keeps message within screen)
+        leftPos = 65 + (Math.random() * 15);
+    }
     balloon.style.left = leftPos + 'vw';
 
+    // Rose on top, message below
     balloon.innerHTML = `
         <span>🌹</span>
         <div class="balloon-tag">${message}</div>

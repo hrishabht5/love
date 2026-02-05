@@ -193,8 +193,8 @@ h1 {
     height: 100vh;
     pointer-events: none;
     z-index: 9999;
-    /* Ensure it's above EVERYTHING */
-    overflow: hidden;
+    /* Above everything */
+    overflow: visible;
 }
 
 .rose-balloon {
@@ -205,7 +205,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: floatUpRose 15s linear forwards;
+    animation: floatUpRose 10s linear forwards;
     z-index: 10000;
 }
 
@@ -231,13 +231,15 @@ h1 {
 
 .balloon-tag {
     background: rgba(255, 255, 255, 0.98);
-    padding: 12px 25px;
+    padding: 12px 20px;
     border-radius: 30px;
-    font-size: 1.25rem;
-    /* Larger text */
+    font-size: 1.1rem;
     color: var(--red-romantic);
     box-shadow: 0 10px 25px rgba(201, 24, 74, 0.25);
-    white-space: nowrap;
+    white-space: normal;
+    max-width: 200px;
+    width: max-content;
+    text-align: center;
     margin-top: 15px;
     border: 2px solid var(--pink-light);
     font-weight: 600;
